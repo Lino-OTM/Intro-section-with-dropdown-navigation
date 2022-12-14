@@ -1,0 +1,198 @@
+@import "../../node_modules/normalize.css/normalize.css";
+@import "./variables";
+@import "./nav-bar.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: $font;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  padding: 2.3rem 1.7rem;
+
+  &__menu-icon {
+    height: 2rem;
+    width: 3.2rem;
+  }
+}
+
+.overlay {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.401);
+  display: none;
+}
+
+.main-container {
+  margin-bottom: 5rem;
+  &__illustration {
+    width: 100%;
+    margin-bottom: 1.9rem;
+  }
+
+  &__title {
+    font-size: 3.52rem;
+    text-align: center;
+    margin-bottom: 1.6rem;
+  }
+
+  &__information {
+    font-size: 1.6rem;
+    text-align: center;
+    padding: 0 1rem;
+    line-height: 2.6rem;
+    margin-bottom: 2.4rem;
+    color: $mediumGray;
+  }
+
+  &__btn {
+    display: block;
+    margin: 0 auto;
+    color: $almostWhite;
+    background-color: $almostBlack;
+    border: 0;
+    padding: 1.6rem 2.3rem;
+    border-radius: 1.5rem;
+    font-size: 1.6rem;
+    margin-bottom: 4.6rem;
+    transition: 400ms;
+
+    &:hover {
+      cursor: pointer;
+      transition: 400ms;
+    }
+  }
+
+  &__company-logos-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.6rem;
+  }
+
+  &__company-logo:nth-child(1) {
+    width: 8.2rem;
+  }
+  &__company-logo:nth-child(2) {
+    width: 5rem;
+  }
+  &__company-logo:nth-child(3) {
+    width: 6.5rem;
+  }
+  &__company-logo:nth-child(4) {
+    width: 6rem;
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 1199px) {
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__illustration {
+      max-width: 70rem;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero {
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2.3rem 4rem;
+    margin-bottom: 4.2rem;
+  }
+
+  .main-container {
+    padding: 0 13rem 0 16.2rem;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    max-width: 140rem;
+
+    &__illustration {
+      width: 48rem;
+    }
+
+    &__data-info-section {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-top: 5rem;
+    }
+
+    &__title,
+    &__information {
+      text-align: start;
+    }
+
+    &__title {
+      font-size: 7.8rem;
+      max-width: 52rem;
+      line-height: 8.5rem;
+      margin-bottom: 4.38rem;
+    }
+
+    &__information {
+      font-size: 1.81rem;
+      line-height: 2.73rem;
+      max-width: 45rem;
+      padding: 0;
+      margin-bottom: 5.5rem;
+    }
+
+    &__btn {
+      margin: 0;
+      padding: 1.8rem 3.2rem;
+      font-size: 1.8rem;
+
+      &:hover {
+        background-color: $almostWhite;
+        color: $almostBlack;
+        border: 1px solid $almostBlack;
+      }
+    }
+
+    &__company-logos-wrapper {
+      margin-top: auto;
+      margin-bottom: 1rem;
+      width: 100%;
+      padding: 0;
+      max-width: 48rem;
+    }
+
+    &__company-logo {
+      width: 2rem;
+    }
+    &__company-logo:nth-child(1) {
+      width: 11.5rem;
+    }
+    &__company-logo:nth-child(2) {
+      width: 7.4rem;
+    }
+    &__company-logo:nth-child(3) {
+      width: 8.8rem;
+    }
+    &__company-logo:nth-child(4) {
+      width: 8.2rem;
+    }
+  }
+}

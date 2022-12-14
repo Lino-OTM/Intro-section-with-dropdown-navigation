@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="./scss/styles.scss" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap" rel="stylesheet" />
+  </head>
+
+  <body>
+    <header class="hero">
+      <img class="hero__logo" src="./assets/images/logo.svg" alt="snap logo" />
+      
+      <!-- menu-bar -->
+        <!-- hamburger icon -->
+      <label for="open-close-menu" class="hero__nav-bar-open">
+        <img class="hero__menu-icon" src="./assets/images/icon-menu.svg" alt="interactive menu" />
+      </label>
+
+      <!-- interactive checkbox-->
+      <input type="checkbox" id="open-close-menu" class="hero__nav-bar-interactive"
+      />
+      <div class="overlay"></div>
+
+      <nav class="hero__nav-bar">
+        <!-- cross icon -->
+        <label for="open-close-menu" class="hero__nav-bar-close">
+          <img class="hero__nav-bar-close-icon" src="./assets/images/icon-close-menu.svg" alt="cross-icon" />
+        </label>
+
+        <ul class="hero__nav-bar-items">
+          <li class="hero__nav-bar-item">
+            Features
+            <img
+              class="hero__nav-bar-down-arrow"
+              src="./assets/images/icon-arrow-down.svg"
+              alt=""
+            />
+            <img
+              class="hero__nav-bar-up-arrow"
+              src="./assets/images/icon-arrow-up.svg"
+              alt=""
+            />
+
+            <ul class="hero__features-items">
+              <li class="hero__features-item">
+                <img src="./assets/images/icon-todo.svg" alt="" /> Todo List
+              </li>
+
+              <li class="hero__features-item">
+                <img src="./assets/images/icon-calendar.svg" alt="" /> Calendar
+              </li>
+
+              <li class="hero__features-item">
+                <img src="./assets/images/icon-reminders.svg" alt="" />
+                Reminders
+              </li>
+
+              <li class="hero__features-item">
+                <img src="./assets/images/icon-planning.svg" alt="" /> Planning
+              </li>
+            </ul>
+          </li>
+
+          <li class="hero__nav-bar-item">
+            Company
+            <img
+              class="hero__nav-bar-down-arrow"
+              src="./assets/images/icon-arrow-down.svg"
+              alt=""
+            />
+            <img
+              class="hero__nav-bar-up-arrow"
+              src="./assets/images/icon-arrow-up.svg"
+              alt=""
+            />
+            <ul class="hero__company-items">
+              <li class="hero__company-item">History</li>
+              <li class="hero__company-item">Our Team</li>
+              <li class="hero__company-item">Blog</li>
+            </ul>
+          </li>
+
+          <li class="hero__nav-bar-item">Careers</li>
+          <li class="hero__nav-bar-item">About</li>
+        </ul>
+
+        <div class="hero__btns-wrapper">
+          <button class="hero__login-btn">Login</button>
+          <button class="hero__register-btn">Register</button>
+        </div>
+      </nav>
+      <!-- end of nav bar -->
+    </header>
+
+    <main class="main-container">
+      <picture class="main-container__illustration-container">
+        <source
+          media="(min-width: 1200px)"
+          srcset="./assets/images/image-hero-desktop.png"
+        />
+        <img
+          class="main-container__illustration"
+          src="./assets/images/image-hero-mobile.png"
+          alt="a man holding a laptop with some abstract vectors in the background"
+        />
+      </picture>
+
+      <section class="main-container__data-info-section">
+        <h1 class="main-container__title">Make remote work</h1>
+        <p class="main-container__information">
+          Get your team in sync, no matter your location. Streamline processes,
+          create team rituals, and watch productivity soar.
+        </p>
+        <button class="main-container__btn">Learn more</button>
+        <div class="main-container__company-logos-wrapper">
+          <img
+            class="main-container__company-logo"
+            src="./assets/images/client-databiz.svg"
+            alt=" databiz company logo"
+          />
+          <img
+            class="main-container__company-logo"
+            src="./assets/images/client-audiophile.svg"
+            alt=" audiophile company logo"
+          />
+          <img
+            class="main-container__company-logo"
+            src="./assets/images/client-meet.svg"
+            alt="meet comapny logo"
+          />
+          <img
+            class="main-container__company-logo"
+            src="./assets/images/client-maker.svg"
+            alt="maker company logo"
+          />
+        </div>
+      </section>
+    </main>
+
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Ivan</a>.
+    </footer>
+  </body>
+</html>

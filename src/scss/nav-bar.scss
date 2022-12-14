@@ -1,0 +1,275 @@
+.hero {
+  &__nav-bar {
+    display: flex;
+
+    &-interactive {
+      display: none;
+    }
+
+    &-down-arrow {
+      margin-left: 1.2rem;
+    }
+
+    &-up-arrow {
+      display: none;
+      margin-left: 1.2rem;
+    }
+
+    &-item {
+      color: $mediumGray;
+      list-style: none;
+
+      &:hover {
+        color: $almostBlack;
+        cursor: pointer;
+      }
+
+      &:nth-child(1) {
+        &:hover .hero__nav-bar-up-arrow {
+          display: inline-block;
+        }
+        &:hover .hero__nav-bar-down-arrow {
+          display: none;
+        }
+        &:hover .hero__features-items {
+          display: block;
+        }
+      }
+
+      &:nth-child(2) {
+        &:hover .hero__nav-bar-up-arrow {
+          display: inline-block;
+        }
+
+        &:hover .hero__nav-bar-down-arrow {
+          display: none;
+        }
+
+        &:hover .hero__company-items {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__features-items,
+  &__company-items {
+    display: none;
+    list-style: none;
+    color: $mediumGray;
+  }
+
+  &__features-item {
+    display: flex;
+    color: $mediumGray;
+
+    &:hover {
+      color: $almostBlack;
+      cursor: pointer;
+    }
+  }
+
+  &__company-item {
+    color: $mediumGray;
+
+    &:hover {
+      color: $almostBlack;
+      cursor: pointer;
+    }
+  }
+
+  &__login-btn {
+    background-color: transparent;
+    border: none;
+    color: $mediumGray;
+    transition: 300ms;
+
+    &:hover {
+      cursor: pointer;
+      color: $almostBlack;
+      transition: 300ms;
+    }
+  }
+
+  &__register-btn {
+    background-color: transparent;
+    border: 1px solid $mediumGray;
+    color: $mediumGray;
+    transition: 300ms;
+
+    &:hover {
+      cursor: pointer;
+      color: $almostBlack;
+      border: 1px solid $almostBlack;
+      transition: 300ms;
+    }
+  }
+}
+
+// mobile media-queries
+@media (max-width: 1199px) {
+  .hero {
+    &__menu-icon {
+      position: absolute;
+      right: 2rem;
+      z-index: 50;
+    }
+
+    &__nav-bar {
+      position: fixed;
+      flex-direction: column;
+      right: 0;
+      top: 0;
+      background-color: $almostWhite;
+      height: 100vh;
+      padding: 1.8rem;
+      width: 24rem;
+      box-sizing: border-box;
+      transform: translate(25rem);
+      transition: 400ms;
+      z-index: 100;
+
+      &-interactive:checked ~ & {
+        transform: translate(0rem);
+        transition: 400ms;
+      }
+
+      &-interactive:checked ~ .overlay {
+        display: block;
+      }
+
+      &-close {
+        align-self: flex-end;
+        margin-bottom: 3.26rem;
+      }
+
+      &-item {
+        font-size: 1.69rem;
+        margin-left: 0.5rem;
+        margin-bottom: 2.4rem;
+      }
+    }
+
+    // Items inside features
+    &__features-items {
+      margin-left: 2.6rem;
+      margin-top: 3rem;
+      margin-bottom: 3.2rem;
+    }
+
+    &__features-item {
+      margin-bottom: 2.3rem;
+      align-items: center;
+      gap: 1.4rem;
+
+      img {
+        width: 1.9rem;
+      }
+    }
+
+    // Items inside company
+    &__company-item {
+      margin-top: 2.5rem;
+      margin-left: 2.5rem;
+    }
+
+    &__btns-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 1.1rem;
+    }
+
+    &__login-btn {
+      font-size: 1.4rem;
+      margin-bottom: 1.6rem;
+    }
+
+    &__register-btn {
+      padding: 1.1rem 2.1rem;
+      border-radius: 1.2rem;
+      font-size: 1.4rem;
+      width: 95%;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero {
+    &__nav-bar-close-icon,
+    &__nav-bar-close,
+    &__menu-icon {
+      display: none;
+    }
+
+    // bar that contains <ul> and <btns>
+    &__nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-left: 6.2rem;
+      width: 100%;
+
+      // <ul> with Features - Company - Careers - About
+      &-items {
+        display: flex;
+        gap: 3.9rem;
+        list-style: none;
+      }
+
+      &-item {
+        font-size: 1.4rem;
+        padding-bottom: 2rem;
+        position: relative;
+        margin-top: 1rem;
+      }
+    }
+
+    &__features-items {
+      position: absolute;
+      background-color: #fff;
+      border-radius: 1rem;
+      top: 3.3rem;
+      left: -7.2rem;
+      padding: 2.7rem 2.2rem 1rem;
+      width: 11rem;
+      box-shadow: 1px 1px 25px 1px #00000025;
+    }
+
+    &__features-item {
+      margin-bottom: 1.6rem;
+      gap: 1.7rem;
+    }
+
+    &__company-items {
+      position: absolute;
+      background-color: #fff;
+      top: 3.7rem;
+      right: -3.1rem;
+      padding: 2.3rem 2.5rem 0.8rem;
+      width: 6.5rem;
+      border-radius: 1rem;
+      box-shadow: 1px 1px 25px 1px #00000025;
+    }
+
+    &__company-item {
+      margin-bottom: 1.6rem;
+    }
+
+    &__btns-wrapper {
+      display: flex;
+      gap: 4.3rem;
+    }
+
+    &__login-btn {
+      font-size: 1.4rem;
+    }
+
+    &__register-btn {
+      font-size: 1.4rem;
+      border-radius: 2rem;
+      padding: 1rem 2rem;
+      border-radius: 1.3rem;
+    }
+  }
+}
